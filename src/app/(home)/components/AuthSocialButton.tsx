@@ -1,5 +1,5 @@
-import { IconType } from "@react-icons/all-files/lib";
 import { FC } from "react";
+import { IconType } from "react-icons/lib";
 
 type AuthSocialButtonProps = {
   icon: IconType;

@@ -3,14 +3,14 @@
 import AuthSocialButton from "@/app/(home)/components/AuthSocialButton";
 import Button from "@/components/Button";
 import Input from "@/components/inputs/Input";
-import { FaGoogle } from "@react-icons/all-files/fa/FaGoogle";
-import { RiKakaoTalkFill } from "@react-icons/all-files/ri/RiKakaoTalkFill";
 import axios from "axios";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { FaGoogle } from "react-icons/fa";
+import { RiGithubFill } from "react-icons/ri";
 type Variant = "LOGIN" | "REGISTER";
 
 const AuthForm = () => {
@@ -153,8 +153,8 @@ const AuthForm = () => {
           </div>
           <div className="mt-6 flex gap-2">
             <AuthSocialButton
-              icon={RiKakaoTalkFill}
-              onClick={() => socialAction("kakao")}
+              icon={RiGithubFill}
+              onClick={() => socialAction("github")}
             />
             <AuthSocialButton
               icon={FaGoogle}
