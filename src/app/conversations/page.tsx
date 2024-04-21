@@ -1,5 +1,5 @@
 const ConversationsPage = () => {
-  return <div>ConversationsPage</div>;
+  return <div></div>;
 };
 
 export default ConversationsPage;
