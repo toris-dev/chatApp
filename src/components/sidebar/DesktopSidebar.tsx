@@ -14,7 +14,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div
-      className={`hidden justify-between lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:flex lg:flex-col lg:overflow-y-auto lg:border-r-DEFAULT lg:bg-orange-400 lg:pb-4 xl:px-6`}
+      className={`hidden justify-between lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:flex lg:w-20 lg:flex-col lg:overflow-y-auto lg:border-r-DEFAULT lg:bg-orange-400 lg:pb-4 xl:px-6`}
     >
       <nav className={`mt-4 flex flex-col justify-between`}>
         <ul className={`flex flex-col items-center space-y-1`}>

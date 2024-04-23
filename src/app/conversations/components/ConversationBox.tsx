@@ -1,3 +1,5 @@
+"use client";
+
 import Avatar from "@/components/Avatar";
 import AvatarGroup from "@/components/AvatarGroup";
 import useOtherUser from "@/hooks/useOtheruser";
@@ -15,7 +17,7 @@ type ConversationBoxProps = {
 const ConversationBox: FC<ConversationBoxProps> = ({ data, selected }) => {
   const otherUser = useOtherUser(data);
   const session = useSession();
-  const router = useRouter;
+  const router = useRouter();
   const userEmail = session.data?.user?.email;
   const lastMessage = useMemo(() => {
     const messages = data.messages || [];
@@ -45,12 +47,16 @@ const ConversationBox: FC<ConversationBoxProps> = ({ data, selected }) => {
     return seenArray.filter((user) => user.email === userEmail).length !== 0;
   }, [userEmail, lastMessage]);
 
+  const handleClick = () => {
+    router.push(`/conversations/${data.id}`);
+  };
   return (
     <div
       className={clsx(
         `relative mb-3 flex w-full cursor-pointer items-center space-x-3 rounded-lg p-3 transition hover:bg-neutral-100`,
         selected ? "bg-neutral-300" : "bg-white"
       )}
+      onClick={handleClick}
     >
       {data.isGroup ? (
         <AvatarGroup users={data.users} />

@@ -38,14 +38,14 @@ const ConversationList: FC<ConversationListProps> = ({
             <MdOutlineGroupAdd size={20} />
           </div>
         </div>
+        {items.map((item) => (
+          <ConversationBox
+            data={item}
+            key={item.id}
+            selected={conversationId === item.id}
+          />
+        ))}
       </div>
-      {items.map((item) => (
-        <ConversationBox
-          data={item}
-          key={item.id}
-          selected={conversationId === item.id}
-        />
-      ))}
     </aside>
   );
 };
