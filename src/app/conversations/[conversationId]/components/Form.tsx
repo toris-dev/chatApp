@@ -21,7 +21,7 @@ const Form = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    setValue("messages", "");
+    setValue("message", "");
     axios.post("/api/messages", {
       ...data,
       conversationId: conversationId,
@@ -34,20 +34,21 @@ const Form = () => {
       conversationId: conversationId,
     });
   };
+
   return (
     <div
       className={`flex w-full items-center gap-2 border-t bg-white p-4 lg:gap-4`}
     >
       <CldUploadButton
         options={{ maxFiles: 1 }}
-        onUploadAdded={handleUpload}
+        onSuccess={handleUpload}
         uploadPreset={process.env.NEXT_PUBLIC_CLOUDENARY_CLOUD_PRESET}
       >
         <HiMiniPhoto />
       </CldUploadButton>
       <form
         className="flex w-full items-center gap-2 lg:gap-4"
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <MessageInput
           id="message"
