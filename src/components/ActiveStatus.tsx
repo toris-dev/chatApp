@@ -1,3 +1,5 @@
+"use client";
+
 const ActiveStatus = () => {
   return <div>ActiveStatus</div>;
 };

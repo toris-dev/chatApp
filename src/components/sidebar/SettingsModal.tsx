@@ -1,3 +1,5 @@
+"use client";
+
 const SettingsModal = () => {
   return <div>SettingsModal</div>;
 };
