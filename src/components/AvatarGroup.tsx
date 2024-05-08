@@ -25,7 +25,7 @@ const AvatarGroup: FC<AvatarGroupType> = ({ users = [] }) => {
         >
           <Image
             fill
-            src={user?.image || "/image/placeholder.png"}
+            src={user?.image || "/images/placeholder.png"}
             alt="avatar"
           />
         </div>

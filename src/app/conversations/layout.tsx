@@ -10,7 +10,6 @@ const ConversationLayout = async ({
 }) => {
   const conversations = await getConversations();
   const users = await getUsers();
-
   return (
     <Sidebar>
       <div className="h-full">

@@ -22,9 +22,11 @@ const ProfileDrawer: FC<ProfileDrawerProps> = ({ isOpen, onClose, data }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const otherUser = useOtherUser(data);
   const title = data.name || otherUser.name;
-  const joinedDate = format(new Date(otherUser.createAt), "PP");
+
+  const joinedDate = format(new Date(otherUser.createdAt), "PP");
   const { members } = useActiveList();
   const isActive = members.indexOf(otherUser?.email!) !== -1;
+
   const statusText = useMemo(() => {
     if (data.isGroup) {
       return `${data.users.length} members`;
